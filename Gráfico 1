@@ -1,0 +1,22 @@
+from pandas import * 
+def vendas_por_região(anoInicio, anoFinal):
+    NAano = []
+    EUano = []
+    JPano = []
+    OUTROSano = []
+    abrir = read_csv('Video_Games.csv', sep=',')
+    for i in range(len(abrir)):
+        linha = abrir.iloc[i]
+        ano = linha['Year_of_Release']
+        Na = linha['NA_Sales']
+        Eu = linha['EU_Sales']
+        Jp = linha['EU_Sales']
+        Outros = linha['Other_Sales']
+        if anoInicio <= ano <= anoFinal:
+            NAano.append(Na)
+            EUano.append(Eu)
+            JPano.append(Jp)
+            OUTROSano.append(Outros)
+    return NAano, EUano, JPano, OUTROSano
+ 
+ #Para ver Na = [0], EU = [1], jp = [2] e outros = [3]
