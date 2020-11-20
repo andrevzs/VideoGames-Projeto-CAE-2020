@@ -1,5 +1,7 @@
 from pandas import * 
 def vendas_por_região(anoInicio, anoFinal):
+    anoFinal = int(anoFinal)
+    anoInicio = int(anoInicio)
     NAano = []
     EUano = []
     JPano = []
@@ -18,5 +20,16 @@ def vendas_por_região(anoInicio, anoFinal):
             JPano.append(Jp)
             OUTROSano.append(Outros)
     return NAano, EUano, JPano, OUTROSano
+
+print('=-'*20)
+print('Digite A para a para todos os anos\nDigite B para um periodo de tempo')
+print('=-'*20)
+x = input(':')
+if x == 'A':
+    print(vendas_por_região(1980, 2017))
+if x == 'B':
+    I = input('ano menor')
+    M = input('ano maior')
+    print(vendas_por_região(I, M))
  
  #Para ver Na = [0], EU = [1], jp = [2] e outros = [3]
