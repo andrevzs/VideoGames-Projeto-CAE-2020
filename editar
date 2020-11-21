@@ -1,0 +1,219 @@
+from pandas import *
+abrir = read_csv('Video_Games.csv', sep=',')
+
+def grafico1(anoInicio, anoFinal):
+    NAano = []
+    EUano = []
+    JPano = []
+    OUTROSano = []
+    if anoInicio == '':
+        for i in range(len(abrir)):
+            linha = abrir.iloc[i]
+            ano = linha['Year_of_Release']
+            Na = linha['NA_Sales']
+            NAano.append(Na)
+            Eu = linha['EU_Sales']
+            EUano.append(Eu)
+            Jp = linha['JP_Sales']
+            JPano.append(Jp)
+            Outros = linha['Other_Sales']
+            OUTROSano.append(Outros)
+    elif anoFinal == '':
+            anoInicio = int(anoInicio)
+            for j in range(len(abrir)):
+                linha = abrir.iloc[j]
+                ano = linha['Year_of_Release']
+                Na = linha['NA_Sales']
+                Eu = linha['EU_Sales']
+                Jp = linha['JP_Sales']
+                Outros = linha['Other_Sales']
+                if int(anoInicio) == ano:
+                    NAano.append(Na)
+                    EUano.append(Eu)
+                    JPano.append(Jp)
+                    OUTROSano.append(Outros)
+    else:
+        anoFinal = int(anoFinal)
+        anoInicio = int(anoInicio)
+        for i in range(len(abrir)):
+            linha = abrir.iloc[i]
+            ano = linha['Year_of_Release']
+            Na = linha['NA_Sales']
+            Eu = linha['EU_Sales']
+            Jp = linha['JP_Sales']
+            Outros = linha['Other_Sales']
+            if anoInicio <= ano <= anoFinal:
+                NAano.append(Na)
+                EUano.append(Eu)
+                JPano.append(Jp)
+                OUTROSano.append(Outros)
+    return round(sum(NAano), 5), round(sum(EUano), 5), round(sum(JPano), 5), round(sum(OUTROSano), 5)
+
+def grafico4(x, y):
+    topG = []
+    topN = []
+    gen = []
+    qnt = []
+    if x == '':
+        for i in range(len(abrir)):
+            linha = abrir.iloc[i]
+            genero = linha['Genre']
+            Na = int(linha['NA_Sales'])
+            Eu = int(linha['EU_Sales'])
+            Jp = int(linha['JP_Sales'])
+            Outros = int(linha['Other_Sales'])
+            soma = Na + Eu + Jp + Outros
+            if genero in gen:
+                lugar = gen.index(genero)
+                qnt[lugar] += soma
+            else:
+                gen.append(genero)
+                qnt.append(soma)
+    elif y == '':
+        for j in range(len(abrir)):
+            linha = abrir.iloc[j]
+            genero = linha['Genre']
+            Na = int(linha['NA_Sales'])
+            Eu = int(linha['EU_Sales'])
+            Jp = int(linha['JP_Sales'])
+            Outros = int(linha['Other_Sales'])
+            soma = Na + Eu + Jp + Outros
+            ano = linha['Year_of_Release']
+            if int(x) == ano:
+                if genero in gen:
+                    lugar = gen.index(genero)
+                    qnt[lugar] += soma
+                else:
+                    gen.append(genero)
+                    qnt.append(soma)
+                
+    else:
+        for k in range(len(abrir)):
+            linha = abrir.iloc[k]
+            genero = linha['Genre']
+            Na = int(linha['NA_Sales'])
+            Eu = int(linha['EU_Sales'])
+            Jp = int(linha['JP_Sales'])
+            Outros = int(linha['Other_Sales'])
+            soma = Na + Eu + Jp + Outros
+            ano = linha['Year_of_Release']
+            if int(x) <= ano <= int(y):
+                if genero in gen:
+                    lugar = gen.index(genero)
+                    qnt[lugar] += Na + Eu + Jp + Outros
+                else:
+                    gen.append(genero)
+                    qnt.append(Na + Eu + Jp + Outros)
+    for q in range(0, 10):
+        s = max(qnt)
+        topN.append(s)
+        l = qnt.index(s)
+        topG.append(gen[l])
+        qnt[l] = 0
+    return topG, topN
+
+def grafico6(x):
+    contador = 0
+    developer = []
+    qnt = []
+    abrir = read_csv('Video_Games.csv', sep=',')
+    if x == '':
+        for i in range(len(abrir)):
+            linha = abrir.iloc[i]
+            dev = linha['Publisher']
+            if str(dev) in developer:
+                lugar = developer.index(dev)
+                qnt[lugar] += 1
+            else:
+                if dev == '':
+                    pass
+                else:
+                    qnt.append(int(1))
+                    developer.append(dev)
+        return developer, qnt
+    else:
+        for j in range(len(abrir)):
+            linha = abrir.iloc[j]
+            dev = linha['Publisher']
+            if x == dev: 
+                contador +=1
+            else: 
+                continue
+    return contador
+
+def grafico7():
+    topconsole = []
+    topnjogos = []
+    console = []
+    njogos = []
+    abrir = read_csv('Video_Games.csv', sep=',')
+    for i in range(len(abrir)):
+        linha = abrir.iloc[i]
+        plataforma = linha['Platform']
+        jogos = linha['Name']
+        if plataforma in console:
+            lugar = console.index(plataforma)
+            njogos[lugar] += 1
+        else:
+            console.append(plataforma)
+            njogos.append(1)
+    for q in range(len(console)):
+        s = max(njogos)
+        topnjogos.append(s)
+        l = njogos.index(s)
+        topconsole.append(console[l])
+        njogos[l] = 0
+    return topconsole, topnjogos
+
+t = True
+while t == True:
+    print("=-"*20)
+    print("Digite 1 para ver qual foi a venda de jogos nas regiôes EU, NA e JP\nDigite 2 para ver quais foram os generos mais vendidos\nDigite 0 para sair")
+    print("~"*40)
+    x = int(input('Digite um dos valores do menu:'))
+    if x == 1:
+        print('Digite 1 para ver quantidade de vendas do inicio ao fim\nDigite 2 para ver a quantidade de um ano em especifico\nDigite 3 para ver a quantidade de um periodo de tempo')
+        y = int(input('Digite um item a cima:'))
+        if y == 1:
+            a = ''
+            b = ''
+            s = grafico1(a, b)
+            print(f"A América do Norte vendeu {s[0]} milhões de jogos\nA europa vendeu {s[1]} milhões de jogos \nO Japão vendeu {s[2]} milhões de jogos \nO restante vendeu {s[3]} milhões de jogos")
+        if y == 2:
+            a = input('Digite o ano em que você quer saber a quantidade de jogos por região')
+            b = ''
+            s = grafico1(a, b)
+            print(f"No ano de {a} foram vendidos:\n{s[0]} milhões de jogos na America do norte\n{s[1]} milhões de jogos na Europa\n{s[2]} milhões de jogos no Japão\n{s[3]} milhões de jogos em outras regiões")
+        if y == 3:
+            a = input('Digite o ano em que voce quer começar o periodo: ')
+            b = input('Digite o ano em que voce quer finalizar o periodo: ')
+            s = grafico1(a, b)
+            print(f"No intervalo entre os anos {a} e {b} foram vendidos:\n{s[0]} milhões de jogos na America do norte\n{s[1]} milhões de jogos na Europa\n{s[2]} milhões de jogos no Japão\n{s[3]} milhões de jogos em outras regiões")
+    if x == 2:
+        lugares = {0 : "Primeiro", 1 : "Segundo", 2 : "Terceiro", 3 : "Quarto", 4 : "Quinto", 5 : "Sexto", 6 : "Setimo", 7 : "Oitavo", 8 : "Nono", 9 : "Decimo"}
+        print('Digite 1 para ver quais foram os generos de jogos mais vendidos de todos os tempos\nDigite 2 para quais foram os generos de jogos mais vendidos de um ano em especifico\nDigite 3 para ver a quais foram os generos de jogos mais vendidos em um espaço de tempo')
+        y = int(input('Digite um dos items a cima:'))
+        if y == 1:
+            a = ''
+            b = ''
+            s = grafico4(a, b)
+            print('Os generos de jogos mais vendidos foram:')
+            for n in range(0, 10):
+                print(f"Em {lugares[n]} lugar: {s[0][n]} com {s[1][n]} milhões vendas")
+        if y == 2:
+            a = input('Digite o ano em que você deseja saber qual foi os generos que mais venderam')
+            b = ''
+            s = grafico4(a, b)
+            print(f'Os generos de jogos mais vendidos em {a} foram:')
+            for n in range(0, 10):
+                print(f"Em {lugares[n]} lugar: {s[0][n]} com {s[1][n]} milhões vendas")
+        if y == 3:
+            a = input('Digite o ano de inicio')
+            b = input('Digite o ano final')
+            s = grafico4(a, b)
+            print(f'Os generos de jogos mais vendidos entre {a} e {b} foram:')
+            for n in range(0, 10):
+                print(f"Em {lugares[n]} lugar: {s[0][n]} com {s[1][n]} milhões vendas")
+
+    if x == 0:
+        t = False
