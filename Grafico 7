@@ -1,0 +1,29 @@
+from pandas import *
+
+def grafico7():
+    topconsole = []
+    topnjogos = []
+    console = []
+    njogos = []
+    abrir = read_csv('Video_Games.csv', sep=',')
+    for i in range(len(abrir)):
+        linha = abrir.iloc[i]
+        plataforma = linha['Platform']
+        jogos = linha['Name']
+        if plataforma in console:
+            lugar = console.index(plataforma)
+            njogos[lugar] += 1
+        else:
+            console.append(plataforma)
+            njogos.append(1)
+    for q in range(len(console)):
+        s = max(njogos)
+        topnjogos.append(s)
+        l = njogos.index(s)
+        topconsole.append(console[l])
+        njogos[l] = 0
+    return topconsole, topnjogos
+
+a = grafico7()
+for i in range(len(a[0])):
+    print(f'O console {a[0][i]} recebeu {a[1][i]} jogos')
