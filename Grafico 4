@@ -1,0 +1,60 @@
+from pandas import *
+
+def grafico4(x, y):
+    topG = []
+    topN = []
+    gen = []
+    qnt = []
+    abrir = read_csv('Video_Games.csv', sep=',')
+    if x == '':
+        for i in range(len(abrir)):
+            linha = abrir.iloc[i]
+            genero = linha['Genre']
+            if genero in gen:
+                lugar = gen.index(genero)
+                qnt[lugar] += 1
+            else:
+                gen.append(genero)
+                qnt.append(1)
+    elif y == '':
+        for j in range(len(abrir)):
+            linha = abrir.iloc[j]
+            genero = linha['Genre']
+            ano = linha['Year_of_Release']
+            if int(x) == ano:
+                if genero in gen:
+                    lugar = gen.index(genero)
+                    qnt[lugar] += 1
+                else:
+                    gen.append(genero)
+                    qnt.append(1)
+                
+    else:
+        for k in range(len(abrir)):
+            linha = abrir.iloc[k]
+            genero = linha['Genre']
+            ano = linha['Year_of_Release']
+            if int(x) <= ano <= int(y):
+                if genero in gen:
+                    lugar = gen.index(genero)
+                    qnt[lugar] += 1
+                else:
+                    gen.append(genero)
+                    qnt.append(1)
+    for q in range(0, 10):
+        s = max(qnt)
+        topN.append(s)
+        l = qnt.index(s)
+        topG.append(gen[l])
+        qnt[l] = 0
+    return topG, topN
+x = input(':')
+y = input(':')
+f = grafico4(x, y)
+for i in range(len(f[0])):
+    if x == '':
+        print(f"Os generos mais frequente no total foi: {f[0][i]} com {f[1][i]} jogos.")
+    elif y == '':
+        print(f"Os generos mais frequente dos anos {x} foram: {f[0][i]} com {f[1][i]} jogos.")
+    else:
+        print(f"Os generos mais frequente no periodo entre os anos {x} e {y} foram: {f[0][i]} com {f[1][i]} jogos.")
