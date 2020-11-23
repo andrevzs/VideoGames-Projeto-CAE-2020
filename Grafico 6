@@ -1,8 +1,11 @@
+  
 from pandas import *
 
 def dev(x):
     contador = 0
+    td = []
     developer = []
+    tq = []
     qnt = []
     abrir = read_csv('Video_Games.csv', sep=',')
     if x == '':
@@ -18,7 +21,14 @@ def dev(x):
                 else:
                     qnt.append(int(1))
                     developer.append(dev)
-        return developer, qnt
+        #pegar as 10 maiores:
+        for q in range(0, 10):
+            s = max(qnt)
+            tq.append(s)
+            l = qnt.index(s)
+            td.append(developer[l])
+            qnt[l] = 0
+        return td, tq
     else:
         for j in range(len(abrir)):
             linha = abrir.iloc[j]
@@ -33,5 +43,3 @@ a = dev(x)
 if x == '':
     for i in range(len(a[0])):
         print(f"A publisher {a[0][i]} publicou {a[1][i]} jogos")
-else:
-    print(f"a publisher {x} publicou {a} jogos")
