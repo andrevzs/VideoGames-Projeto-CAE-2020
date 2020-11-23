@@ -114,7 +114,9 @@ def grafico4(x, y):
 
 def grafico6(x):
     contador = 0
+    td = []
     developer = []
+    tq = []
     qnt = []
     abrir = read_csv('Video_Games.csv', sep=',')
     if x == '':
@@ -130,7 +132,14 @@ def grafico6(x):
                 else:
                     qnt.append(int(1))
                     developer.append(dev)
-        return developer, qnt
+        #pegar as 10 maiores:
+        for q in range(0, 10):
+            s = max(qnt)
+            tq.append(s)
+            l = qnt.index(s)
+            td.append(developer[l])
+            qnt[l] = 0
+        return td, tq
     else:
         for j in range(len(abrir)):
             linha = abrir.iloc[j]
@@ -168,7 +177,7 @@ def grafico7():
 t = True
 while t == True:
     print("=-"*20)
-    print("Digite 1 para ver qual foi a venda de jogos nas regiôes EU, NA e JP\nDigite 2 para ver quais foram os generos mais vendidos\nDigite 0 para sair")
+    print("Digite 1 para ver qual foi a venda de jogos nas regiôes EU, NA e JP\nDigite 2 para ver quais foram os generos mais vendidos\nDigite 3 para ver a frequencia de publishers nos anos\nDigite 4 para ver quais foram os consoles com maior numero de jogos\nDigite 0 para sair")
     print("~"*40)
     x = int(input('Digite um dos valores do menu:'))
     if x == 1:
@@ -187,6 +196,10 @@ while t == True:
         if y == 3:
             a = input('Digite o ano em que voce quer começar o periodo: ')
             b = input('Digite o ano em que voce quer finalizar o periodo: ')
+            while b <= a:
+                 print('Você deve primeiro digitar o ano de inicio, depois o ano de fechamento. Eles não podem ser iguais.')
+                 a = input('Digite o ano de inicio')
+                 b = input('Digite o ano final')
             s = grafico1(a, b)
             print(f"No intervalo entre os anos {a} e {b} foram vendidos:\n{s[0]} milhões de jogos na America do norte\n{s[1]} milhões de jogos na Europa\n{s[2]} milhões de jogos no Japão\n{s[3]} milhões de jogos em outras regiões")
     if x == 2:
@@ -210,10 +223,30 @@ while t == True:
         if y == 3:
             a = input('Digite o ano de inicio')
             b = input('Digite o ano final')
+            while b <= a:
+                print('Você deve primeiro digitar o ano de inicio, depois o ano de fechamento. Eles não podem ser iguais.')
+                a = input('Digite o ano de inicio')
+                b = input('Digite o ano final')
             s = grafico4(a, b)
             print(f'Os generos de jogos mais vendidos entre {a} e {b} foram:')
             for n in range(0, 10):
                 print(f"Em {lugares[n]} lugar: {s[0][n]} com {s[1][n]} milhões vendas")
+    if x == 3: 
+        print("Digite 1 para ver quantas vezes uma publisher escolhida por você aparece ex.: Take-Two, Nintendo, Ubisoft\nDigite 2 para ver quais foram as publisher que mais apareceram desde o começo")
+        y = int(input("Digite um dos items a cima"))
+        if y == 1:
+            k = input('Digite uma publisher:').capitalize()
+            s = grafico6(k)
+            print(f"A {k} apareceu {s} vezes ao longo dos anos")
+        if y == 2:
+            k = ''
+            s = grafico6(k)
+            for i in range(len(s[0])):
+                print(f'A developer {s[0][i]} apareceu {s[1][i]} vezes')
+    if x == 4:
+        a = grafico7()
+        for i in range(len(a[0])):
+            print(f'O console {a[0][i]} recebeu {a[1][i]} jogos')
 
     if x == 0:
         t = False
