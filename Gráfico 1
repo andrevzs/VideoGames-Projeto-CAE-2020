@@ -1,48 +1,68 @@
-from pandas import * 
-def grafico1(anoInicio, anoFinal):
-    NAano = []
-    EUano = []
-    JPano = []
-    OUTROSano = []
-    if anoInicio == '':
+from pandas import *
+
+abrir = read_csv('VideoGames.csv', sep=',')
+
+
+def grafico1(ano_inicio, ano_final):
+    na_ano = []
+    eu_ano = []
+    jp_ano = []
+    ot_ano = []
+
+    if ano_inicio == '':
         for i in range(len(abrir)):
             linha = abrir.iloc[i]
+
+            na = linha['NA_Sales']
+            na_ano.append(na)
+
+            eu = linha['EU_Sales']
+            eu_ano.append(eu)
+
+            jp = linha['JP_Sales']
+            jp_ano.append(jp)
+
+            ot = linha['Other_Sales']
+            ot_ano.append(ot)
+
+    elif ano_final == '':
+        ano_inicio = int(ano_inicio)
+
+        for j in range(len(abrir)):
+            linha = abrir.iloc[j]
+
             ano = linha['Year_of_Release']
-            Na = linha['NA_Sales']
-            NAano.append(Na)
-            Eu = linha['EU_Sales']
-            EUano.append(Eu)
-            Jp = linha['JP_Sales']
-            JPano.append(Jp)
-            Outros = linha['Other_Sales']
-            OUTROSano.append(Outros)
-    elif anoFinal == '':
-            anoInicio = int(anoInicio)
-            for j in range(len(abrir)):
-                linha = abrir.iloc[j]
-                ano = linha['Year_of_Release']
-                Na = linha['NA_Sales']
-                Eu = linha['EU_Sales']
-                Jp = linha['JP_Sales']
-                Outros = linha['Other_Sales']
-                if int(anoInicio) == ano:
-                    NAano.append(Na)
-                    EUano.append(Eu)
-                    JPano.append(Jp)
-                    OUTROSano.append(Outros)
+            na = linha['NA_Sales']
+            eu = linha['EU_Sales']
+            jp = linha['JP_Sales']
+            ot = linha['Other_Sales']
+
+            if int(ano_inicio) == ano:
+                na_ano.append(na)
+                eu_ano.append(eu)
+                jp_ano.append(jp)
+                ot_ano.append(ot)
+
     else:
-        anoFinal = int(anoFinal)
-        anoInicio = int(anoInicio)
+        ano_final = int(ano_final)
+        ano_inicio = int(ano_inicio)
+
         for i in range(len(abrir)):
             linha = abrir.iloc[i]
+
             ano = linha['Year_of_Release']
-            Na = linha['NA_Sales']
-            Eu = linha['EU_Sales']
-            Jp = linha['JP_Sales']
-            Outros = linha['Other_Sales']
-            if anoInicio <= ano <= anoFinal:
-                NAano.append(Na)
-                EUano.append(Eu)
-                JPano.append(Jp)
-                OUTROSano.append(Outros)
-    return round(sum(NAano), 5), round(sum(EUano), 5), round(sum(JPano), 5), round(sum(OUTROSano), 5)
+            na = linha['NA_Sales']
+            eu = linha['EU_Sales']
+            jp = linha['JP_Sales']
+            ot = linha['Other_Sales']
+
+            if ano_inicio <= ano <= ano_final:
+                na_ano.append(na)
+                eu_ano.append(eu)
+                jp_ano.append(jp)
+                ot_ano.append(ot)
+
+    print('NA:', na_ano, 'EU:', eu_ano, 'JP:', jp_ano, 'Outros:',ot_ano)
+
+
+grafico1(1977, 2018)
