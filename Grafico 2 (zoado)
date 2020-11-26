@@ -1,18 +1,21 @@
 from pandas import * 
+import math
 def notas_por_genero(gen): 
     generos = {'Esporte' : 'Sports', 'Plataforma' : 'Platform', 'Corrida' : 'Racing', 'Puzzle' : 'Puzzle', 'Outros' : 'Misc', 'Fps' : 'Shooter', 'Simulação' : 'Simulation', 'Ação' : 'Action', 'Luta' : 'Fighting', 'Aventura' : 'Adventure', 'Estrategia' : 'Strategy'}
     gen = generos[str(gen)]
     NotasUsuario = []
     NotasCriticos = []
-    abrir = read_csv('Video_Games.csv', sep=',')
+    abrir = read_csv('desgraça.csv', sep=',')
     for i in range(len(abrir)):
         linha = abrir.iloc[i]
         usuario = linha['User_Score']
         critico = linha['Critic_Score']
         genero = linha['Genre']
         if genero == gen:
-            NotasUsuario.append(usuario)
-            NotasCriticos.append(critico)
+            if math.isnan(float(usuario)) == False:
+                NotasUsuario.append(usuario)
+            if math.isnan(float(critico)) == False:
+                NotasCriticos.append(critico)
     return NotasUsuario, NotasCriticos
 
 print('=-'*20)
@@ -24,5 +27,5 @@ s = notas_por_genero(gen)
 
 criticos = s[1]
 usuario = s[0]
-for i in range(len(criticos)):
-    print(f'Nota dos usuarios para esse genero foi: {s[0][i]}\nNota dos criticos para esse genero foi: {s[1][i]}')
+print(f'Notas para o genero {gen} para criticos:{criticos}\n')
+print(f'Notas para o genero {gen} para usuarios:{usuario}')
