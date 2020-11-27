@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 vg = pd.read_csv('VideoGames.csv', sep=',')
 
-
 def graf2():
     generos = ['ACTION', 'ADVENTURE', 'FIGHTING', 'MISC', 'PLATFORM', 'PUZZLE', 'RACING', 'ROLE-PLAYING', 'SHOOTER', 'SIMULATION', 'SPORTS', 'STRATEGY']
 
@@ -85,6 +84,5 @@ def graf2():
                 if repetir.upper() == 'N':
                     rodar  = False
                     valido1 = False
-
-
-graf2()
+                if repetir.upper() == 'S':
+                    graf2()
