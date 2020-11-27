@@ -1,0 +1,37 @@
+#Gráfico 5
+from pandas import *
+abrir = read_csv('VideoGames.csv', sep=',')
+def grafico5(pub):
+    ano = []
+    japão = []
+    na = []
+    eu = []
+    outros = []
+    for i in range(len(abrir)):
+        linha = abrir.iloc[i]
+        publisher = linha['Publisher']
+        Na = linha['NA_Sales']
+        Eu = linha['EU_Sales']
+        Jp = linha['JP_Sales']
+        Outros = linha['Other_Sales']
+        year = linha['Year_of_Release']
+        if pub == publisher:
+            if year in ano:
+                pos = ano.index(year)
+                japão[pos] += Jp
+                na[pos] += Na
+                eu[pos] += Eu
+                outros[pos] += Outros
+            else:
+                ano.append(year)
+                japão.append(Jp)
+                na.append(Na)
+                eu.append(Eu)
+                outros.append(Outros)
+    return ano, na, eu, japão, outros
+
+pub = input('Digite uma publisher de jogos:').capitalize()
+x = grafico5(pub)
+print(f'Publisher : {pub}')
+for i in range(len(x[0])):
+    print(f"ano: {x[0][i]}, na: {x[1][i]}, eu: {x[2][i]} japão: {x[3][i]}, outros: {x[4][i]}")
