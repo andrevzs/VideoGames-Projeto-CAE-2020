@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ba292c6-0f2a-450a-953d-bfb632938d78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ArquivosFinais/VideoGames.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grafico 7" beforeDir="false" afterPath="$PROJECT_DIR$/Grafico 7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico2-Notas.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico2-Notas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
       <recent name="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Grafico4-Jogos">
+  <component name="RunManager" selected="Python.Grafico2-Notas (1)">
     <configuration name="Grafico 7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,7 +82,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Grafico1-Vendas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Grafico2-Notas (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,11 +90,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ArquivosFinais" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais\Grafico1-Vendas.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArquivosFinais/Grafico2-Notas.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Grafico2-Notas (1)" />
         <item itemvalue="Python.Grafico4-Jogos" />
         <item itemvalue="Python.Grafico 7" />
         <item itemvalue="Python.Grafico3 - Generos" />
         <item itemvalue="Python.Grafico2-Notas" />
-        <item itemvalue="Python.Grafico1-Vendas" />
       </list>
     </recent_temporary>
   </component>
@@ -236,22 +235,22 @@
       <screen x="0" y="0" width="1603" height="862" />
     </state>
     <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1603.862@0.0.1603.862" timestamp="1606480348152" />
-    <state width="488" height="734" key="GridCell.Tab.0.bottom" timestamp="1606483101686">
+    <state width="817" height="734" key="GridCell.Tab.0.bottom" timestamp="1606510867831">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="488" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606483101686" />
-    <state width="488" height="734" key="GridCell.Tab.0.center" timestamp="1606483101686">
+    <state width="817" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606510867831" />
+    <state width="817" height="734" key="GridCell.Tab.0.center" timestamp="1606510867831">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="488" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606483101686" />
-    <state width="488" height="734" key="GridCell.Tab.0.left" timestamp="1606483101686">
+    <state width="817" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606510867831" />
+    <state width="817" height="734" key="GridCell.Tab.0.left" timestamp="1606510867831">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="488" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606483101686" />
-    <state width="488" height="734" key="GridCell.Tab.0.right" timestamp="1606483101686">
+    <state width="817" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606510867831" />
+    <state width="817" height="734" key="GridCell.Tab.0.right" timestamp="1606510867831">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="488" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606483101686" />
+    <state width="817" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606510867831" />
     <state x="393" y="151" key="Vcs.Push.Dialog.v2" timestamp="1606319112221">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
