@@ -2,7 +2,7 @@ import pandas as pd
 import math
 import matplotlib.pyplot as plt
 
-vg = pd.read_csv('../VideoGames.csv', sep=',')
+vg = pd.read_csv('VideoGames.csv', sep=',')
 
 # Usuário fornece gênero
 print('= Opções de Gênero =\nAction, Sports, Misc, Role-Playing, Shooter,', '\nAdventure, Racing, Platform, Simulation, Fighting, Strategy, Puzzle')
@@ -33,12 +33,11 @@ for i in range(len(vg)):
 # Plot histograma barras agrupadas
 # Eixo X: nota
 # Eixo Y: frequência
-
-np, binsp, patchesp = plt.hist(n_players, bins='auto', rwidth=0.85)
-nc, binsc, patchesc = plt.hist(n_critica, bins='auto', rwidth=0.85)
-
+cores = ['b', 'g']
+fig, ax1 = plt.subplots()
+plt.title('Notas')
+ax1.hist([n_players,n_critica],color=cores)
+plt.tight_layout()
 plt.xlabel('Valor')
 plt.ylabel('Ocorrências')
-plt.title('Notas')
-
 plt.show()
