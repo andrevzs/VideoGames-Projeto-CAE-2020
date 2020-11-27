@@ -37,21 +37,6 @@ def graf3(ano_i, ano_f):
     return total
 
 
-'''
-# Calcular 10 maiores valores
-top10 = []
-
-for a in range(0, 10):
-    max1 = 0
-
-    for b in range(len(total)):
-        if total[b] > max1:
-            max1 = total[b]
-
-        total.remove(max1)
-        top10.append(max1)
-'''
-
 op = input('Deseja escolher um intervalo de anos? [S/N] ')
 if op.upper() == 'N':
     graf3(0, 0)
@@ -59,4 +44,20 @@ if op.upper() == 'S':
     ini = int(input('\nDigite o primeiro ano: '))
     fin = int(input('Digite o segundo ano: '))
     graf3(ini, fin)
+
+# Calcular 10 maiores valores
+top10 = []
+
+for a in range(0, 5):
+    max1 = 0
+
+    for b in range(len(total)):
+        if int(total[b]) > max1:
+            max1 = total[b]
+
+        total.remove(max1)
+        top10.append(max1)
+
+
 print(total)
+print(top10)
