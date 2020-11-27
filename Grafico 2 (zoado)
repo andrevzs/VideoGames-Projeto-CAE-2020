@@ -1,7 +1,20 @@
+<<<<<<< Updated upstream
 from pandas import * 
 import math
 def notas_por_genero(gen): 
     generos = {'Esporte' : 'Sports', 'Plataforma' : 'Platform', 'Corrida' : 'Racing', 'Puzzle' : 'Puzzle', 'Outros' : 'Misc', 'Fps' : 'Shooter', 'Simulação' : 'Simulation', 'Ação' : 'Action', 'Luta' : 'Fighting', 'Aventura' : 'Adventure', 'Estrategia' : 'Strategy'}
+=======
+from pandas import *
+
+abrir = read_csv('VideoGames.csv', sep=',')
+
+def notas_por_genero(gen):
+    generos = {'Esporte': 'Sports', 'Plataforma': 'Platform', 'Corrida': 'Racing',
+               'Puzzle': 'Puzzle', 'Outros': 'Misc', 'Fps': 'Shooter',
+               'Simulação': 'Simulation', 'Ação': 'Action', 'Luta': 'Fighting',
+               'Aventura': 'Adventure', 'Estrategia': 'Strategy'}
+
+>>>>>>> Stashed changes
     gen = generos[str(gen)]
     NotasUsuario = []
     NotasCriticos = []

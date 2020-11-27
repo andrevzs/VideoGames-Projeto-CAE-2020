@@ -1,6 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-vg = pd.read_csv('VideoGames.csv', sep=',')  # vg = VideoGames.csv
+vg = pd.read_csv('../VideoGames.csv', sep=',')  # vg = VideoGames.csv
 
 # Todos os anos
 anos        = []
@@ -46,8 +47,7 @@ eu_arred = ['%.2f' % y for y in eu_sales]
 jp_arred = ['%.2f' % z for z in jp_sales]
 ot_arred = ['%.2f' % w for w in other_sales]
 
-# Lista de vendas NA
-# Soma(Ano1), Soma(Ano2), Soma(Ano3)...
+"""# Teste para conferir valores
 print('NA Sales:', na_arred)
 print('NA Total:', round(sum(na_sales)), 2)
 
@@ -59,3 +59,17 @@ print('JP Total:', round(sum(jp_sales)), 2)
 
 print('Other Sales:', ot_arred)
 print('Other Total:', round(sum(other_sales)), 2)
+"""
+
+x = anos
+
+plt.plot(x, na_sales, label='Vendas NA')
+plt.plot(x, eu_sales, label='Vendas EU')
+plt.plot(x, jp_sales, label='Vendas JP')
+plt.plot(x, other_sales, label='Outras Regiões')
+
+plt.xlabel('Anos')
+plt.ylabel('Nº de vendas em milhões')
+plt.title('Número de Vendas ~ Região/Ano')
+plt.legend()
+plt.show()

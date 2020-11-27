@@ -1,33 +1,46 @@
+import pandas as pd
+
+abrir = pd.read_csv('VideoGames.csv', sep=',')
+
+
 def grafico4(x, y):
-    topG = []
-    topN = []
+    top_g = []
+    top_n = []
     gen = []
     qnt = []
+
     if x == '':
         for i in range(len(abrir)):
             linha = abrir.iloc[i]
+
             genero = linha['Genre']
-            Na = int(linha['NA_Sales'])
-            Eu = int(linha['EU_Sales'])
-            Jp = int(linha['JP_Sales'])
-            Outros = int(linha['Other_Sales'])
-            soma = Na + Eu + Jp + Outros
+            na = int(linha['NA_Sales'])
+            eu = int(linha['EU_Sales'])
+            jp = int(linha['JP_Sales'])
+            outros = int(linha['Other_Sales'])
+
+            soma = na + eu + jp + outros
+
             if genero in gen:
                 lugar = gen.index(genero)
                 qnt[lugar] += soma
             else:
                 gen.append(genero)
                 qnt.append(soma)
+
     elif y == '':
         for j in range(len(abrir)):
             linha = abrir.iloc[j]
+
             genero = linha['Genre']
-            Na = int(linha['NA_Sales'])
-            Eu = int(linha['EU_Sales'])
-            Jp = int(linha['JP_Sales'])
-            Outros = int(linha['Other_Sales'])
-            soma = Na + Eu + Jp + Outros
             ano = linha['Year_of_Release']
+            na = int(linha['NA_Sales'])
+            eu = int(linha['EU_Sales'])
+            jp = int(linha['JP_Sales'])
+            outros = int(linha['Other_Sales'])
+
+            soma = na + eu + jp + outros
+
             if int(x) == ano:
                 if genero in gen:
                     lugar = gen.index(genero)
@@ -39,24 +52,26 @@ def grafico4(x, y):
     else:
         for k in range(len(abrir)):
             linha = abrir.iloc[k]
+
             genero = linha['Genre']
-            Na = int(linha['NA_Sales'])
-            Eu = int(linha['EU_Sales'])
-            Jp = int(linha['JP_Sales'])
-            Outros = int(linha['Other_Sales'])
-            soma = Na + Eu + Jp + Outros
             ano = linha['Year_of_Release']
+            na = int(linha['NA_Sales'])
+            eu = int(linha['EU_Sales'])
+            jp = int(linha['JP_Sales'])
+            outros = int(linha['Other_Sales'])
+
             if int(x) <= ano <= int(y):
                 if genero in gen:
                     lugar = gen.index(genero)
-                    qnt[lugar] += Na + Eu + Jp + Outros
+                    qnt[lugar] += na + eu + jp + outros
                 else:
                     gen.append(genero)
-                    qnt.append(Na + Eu + Jp + Outros)
+                    qnt.append(na + eu + jp + outros)
+
     for q in range(0, 10):
         s = max(qnt)
-        topN.append(s)
+        top_n.append(s)
         l = qnt.index(s)
-        topG.append(gen[l])
+        top_g.append(gen[l])
         qnt[l] = 0
-    return topG, topN
+    return top_g, top_n
