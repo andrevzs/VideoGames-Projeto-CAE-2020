@@ -34,7 +34,7 @@ def graf3(ano_i, ano_f):
                     if gnr == lstgen[j]:
                         total[j] += glob
 
-        return total
+    return total
 
 
 '''
