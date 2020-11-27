@@ -1,15 +1,17 @@
 from pandas import *
 
+abrir = read_csv('VideoGames.csv', sep=',')
+
+
 def grafico7():
     topconsole = []
     topnjogos = []
     console = []
     njogos = []
-    abrir = read_csv('Video_Games.csv', sep=',')
+
     for i in range(len(abrir)):
         linha = abrir.iloc[i]
         plataforma = linha['Platform']
-        jogos = linha['Name']
         if plataforma in console:
             lugar = console.index(plataforma)
             njogos[lugar] += 1
@@ -24,6 +26,7 @@ def grafico7():
         njogos[l] = 0
     return topconsole, topnjogos
 
+
 a = grafico7()
-for i in range(len(a[0])):
-    print(f'O console {a[0][i]} recebeu {a[1][i]} jogos')
+for j in range(len(a[0])):
+    print(f'O console {a[0][j]} recebeu {a[1][j]} jogos')
