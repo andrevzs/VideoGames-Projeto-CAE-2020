@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ba292c6-0f2a-450a-953d-bfb632938d78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ArquivosFinais/Menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editar" beforeDir="false" afterPath="$PROJECT_DIR$/editar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,7 @@
       <recent name="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Grafico2-Notas (1)">
+  <component name="RunManager" selected="Python.Menu">
     <configuration name="Grafico 7" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,6 +75,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Grafico 7" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Grafico1-Vendas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VideoGames-Projeto-CAE-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ArquivosFinais" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArquivosFinais/Grafico1-Vendas.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -102,48 +125,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Grafico2-Notas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="VideoGames-Projeto-CAE-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais\Grafico2-Notas.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Grafico3 - Generos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="VideoGames-Projeto-CAE-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais\Grafico3 - Generos.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Grafico4-Jogos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,13 +146,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VideoGames-Projeto-CAE-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ArquivosFinais" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArquivosFinais/Menu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Menu" />
+        <item itemvalue="Python.Grafico1-Vendas" />
         <item itemvalue="Python.Grafico2-Notas (1)" />
         <item itemvalue="Python.Grafico4-Jogos" />
         <item itemvalue="Python.Grafico 7" />
-        <item itemvalue="Python.Grafico3 - Generos" />
-        <item itemvalue="Python.Grafico2-Notas" />
       </list>
     </recent_temporary>
   </component>
@@ -230,26 +232,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Plot do gráfico para todos os anos" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606480348153">
+    <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606572512812">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1603.862@0.0.1603.862" timestamp="1606480348152" />
-    <state width="693" height="734" key="GridCell.Tab.0.bottom" timestamp="1606515117158">
+    <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1603.862@0.0.1603.862" timestamp="1606572512812" />
+    <state width="734" height="734" key="GridCell.Tab.0.bottom" timestamp="1606583544329">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="693" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606515117158" />
-    <state width="693" height="734" key="GridCell.Tab.0.center" timestamp="1606515117158">
+    <state width="734" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606583544329" />
+    <state width="734" height="734" key="GridCell.Tab.0.center" timestamp="1606583544329">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="693" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606515117158" />
-    <state width="693" height="734" key="GridCell.Tab.0.left" timestamp="1606515117158">
+    <state width="734" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606583544329" />
+    <state width="734" height="734" key="GridCell.Tab.0.left" timestamp="1606583544329">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="693" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606515117158" />
-    <state width="693" height="734" key="GridCell.Tab.0.right" timestamp="1606515117158">
+    <state width="734" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606583544329" />
+    <state width="734" height="734" key="GridCell.Tab.0.right" timestamp="1606583544329">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="693" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606515117158" />
+    <state width="734" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606583544329" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1606515095621">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
