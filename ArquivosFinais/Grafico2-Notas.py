@@ -1,3 +1,4 @@
+
 import pandas as pd
 import math
 import matplotlib.pyplot as plt
@@ -82,7 +83,8 @@ def graf2():
                     print('Algo deu errado. Digite de novo por favor: ')
                     rodar = False
                 if repetir.upper() == 'N':
-                    rodar  = False
-                    valido1 = False
+                    exit()
                 if repetir.upper() == 'S':
                     graf2()
+
+graf2()
