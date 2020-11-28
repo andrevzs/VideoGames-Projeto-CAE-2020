@@ -1,75 +1,70 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-vg = pd.read_csv('../VideoGames.csv', sep=',')  # vg = VideoGames.csv
+vg = pd.read_csv('VideoGames.csv', sep=',')
 
-# Todos os anos
-anos        = []
-na_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-eu_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-jp_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-other_sales = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-               0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+def gráfico1(x, y): # x = ano de inicio do intervalo de tempo; y = ano de fim do intervalo de tempo.
+    anos = []
+    periodo = []
+    na_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    eu_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    jp_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    other_sales = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in range(len(vg)):
+        li = vg.iloc[i]
 
-for i in range(len(vg)):
-    li = vg.iloc[i]
+        anoli = int(li['Year_of_Release'])
+        anos.append(anoli)
 
-    anoli = int(li['Year_of_Release'])
-    anos.append(anoli)
+    anos = list(set(anos))
+    for i in range(len(vg)):
+        li = vg.iloc[i]
 
-anos = list(set(anos))
+        anoli = int(li['Year_of_Release'])
+        nali  = float(li['NA_Sales'])
+        euli  = float(li['EU_Sales'])
+        jpli  = float(li['JP_Sales'])
+        otli  = float(li['Other_Sales'])
+        for j in range(len(anos)):
+            if anoli == anos[j]:
+                    if x == 0 and y == 0:
+                        na_sales[j]    += nali
+                        eu_sales[j]    += euli
+                        jp_sales[j]    += jpli
+                        other_sales[j] += otli
+                    if x <= anoli <= y:
+                        na_sales[j]    += nali
+                        eu_sales[j]    += euli
+                        jp_sales[j]   += jpli
+                        other_sales[j] += otli
 
-for i in range(len(vg)):
-    li = vg.iloc[i]
+    return anos, na_sales, eu_sales, jp_sales, other_sales
+def plot1(ano, na, eu, jp, other):
 
-    anoli = int(li['Year_of_Release'])
-    nali  = float(li['NA_Sales'])
-    euli  = float(li['EU_Sales'])
-    jpli  = float(li['JP_Sales'])
-    otli  = float(li['Other_Sales'])
+    plt.plot(ano, na, label='Vendas NA')
+    plt.plot(ano, eu, label='Vendas EU')
+    plt.plot(ano, jp, label='Vendas JP')
+    plt.plot(ano, other, label='Outras Regiões')
 
-    for j in range(len(anos)):
-        if anoli == anos[j]:
-            na_sales[j]    += nali
-            eu_sales[j]    += euli
-            jp_sales[j]    += jpli
-            other_sales[j] += otli
+    plt.ylabel('Nº de vendas em milhões')
+    plt.xlabel('Anos')
+    plt.title('Número de Vendas ~ Região/Ano')
+    plt.legend()
+    plt.show()
 
-na_arred = ['%.2f' % x for x in na_sales]
-eu_arred = ['%.2f' % y for y in eu_sales]
-jp_arred = ['%.2f' % z for z in jp_sales]
-ot_arred = ['%.2f' % w for w in other_sales]
+x = int(input('Digite o ano de inicio'))
+y = int(input('Digite o ano final'))
+f = gráfico1(x, y)
+print(len(f[0]), len(f[1]), len(f[2]), len(f[3]), len(f[4]))
+for i in range(len(f[0])):
+    print(f"o ano {f[0][i]} teve vendas Na: {f[1][i]} Eu: {f[2][i]} Jp: {f[3][i]} Outros: {f[4][i]}")
 
-"""# Teste para conferir valores
-print('NA Sales:', na_arred)
-print('NA Total:', round(sum(na_sales)), 2)
-
-print('\nEU Sales:', eu_arred)
-print('EU Total', round(sum(eu_sales)), 2)
-
-print('\nJP Sales:', jp_arred)
-print('JP Total:', round(sum(jp_sales)), 2)
-
-print('Other Sales:', ot_arred)
-print('Other Total:', round(sum(other_sales)), 2)
-"""
-
-x = anos
-
-plt.plot(x, na_sales, label='Vendas NA')
-plt.plot(x, eu_sales, label='Vendas EU')
-plt.plot(x, jp_sales, label='Vendas JP')
-plt.plot(x, other_sales, label='Outras Regiões')
-
-plt.xlabel('Anos')
-plt.ylabel('Nº de vendas em milhões')
-plt.title('Número de Vendas ~ Região/Ano')
-plt.legend()
-plt.show()
+plot1(f[0], f[1], f[2], f[3], f[4])
