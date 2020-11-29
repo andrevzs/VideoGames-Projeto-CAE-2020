@@ -47,14 +47,18 @@ def graf3(ano_i, ano_f):
     return top10gen, top10vendas
     
 
-
 op = input('Deseja escolher um intervalo de anos? [S/N] ')
+continuar = False
 if op.upper() == 'N':
-    k = graf3(0, 0)
+    ini = 0 
+    fini = 0
 if op.upper() == 'S':
-    ini = int(input('\nDigite o primeiro ano: '))
-    fin = int(input('Digite o segundo ano: '))
-    k = graf3(ini, fin)
+    while continuar == False:
+        ini = int(input('\nDigite o primeiro ano: '))
+        fini = int(input('Digite o segundo ano: '))
+        if fini >= ini:
+            continuar = True   
+k = graf3(ini, fini)
 
 # Calcular 10 maiores valores
 
