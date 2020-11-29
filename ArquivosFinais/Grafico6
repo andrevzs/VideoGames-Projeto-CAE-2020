@@ -50,9 +50,16 @@ def graf6(x,y):
             MediaCritico[j] = a
             MediaUsuario[j] = b
     return anos, MediaCritico, MediaUsuario, qnt
-k = int(input("Digite o ano de inicio do periodo"))
-y = int(input("Digite o ano final do periodo"))
-x = graf6(k, y)
+
+op = input('Deseja escolher um intervalo de anos? [S/N] ')
+if op.upper() == 'N':
+    ini = 0 
+    fini = 0
+if op.upper() == 'S':
+    ini = int(input('\nDigite o primeiro ano: '))
+    fini = int(input('Digite o segundo ano: '))
+
+x = graf6(ini, fini)
 
 def plot6(ano, mediaC, mediaU):
     plt.style.use('dark_background')
@@ -65,10 +72,10 @@ def plot6(ano, mediaC, mediaU):
 
     plt.plot(ano, mediaC, label='Media Criticos')
     plt.plot(ano, mediaU, label='Media Usuarios')
-    if k == 0 and y == 0:
+    if ini == 0 and fini == 0:
         plt.axis([1977, 2020, 0, 10])
     else:
-        plt.axis([k, y, 0, 10])
+        plt.axis([ini, fini, 0, 10])
     plt.xlabel('Anos', color='#ececec')
     plt.ylabel('Notas', color='#ececec')
     plt.title('Media de notas por ano Critico x Usuarios', fontweight='bold')
