@@ -10,6 +10,9 @@ eu = []
 jp = []
 ot = []
 
+print('Exemplos de publishers:\n'
+      'Nintendo, Microsoft, Take-Two, Sony, Activision,\n'
+      'Ubisoft, Bethesda, Electronic Arts, Capcom, Sega\n')
 publisher = input('Digite uma publisher: ')
 
 for i in range(len(vg)):
@@ -22,7 +25,7 @@ for i in range(len(vg)):
     otli = float(li['Other_Sales'])
     ano   = int(li['Year_of_Release'])
 
-    if pub.upper() == str(publisher).upper():
+    if str(publisher).upper() in pub.upper():
         if ano in anos:
             pass
         else:
@@ -47,10 +50,11 @@ for j in range(len(vg)):
 
     for k in range(len(anos)):
         if ano == anos[k]:
-            na[k] += nali
-            eu[k] += euli
-            jp[k] += jpli
-            ot[k] += otli
+            if str(publisher).upper() in pub.upper():
+                na[k] += nali
+                eu[k] += euli
+                jp[k] += jpli
+                ot[k] += otli
 
 plt.style.use('dark_background')
 plt.rcParams['figure.facecolor'] = '#222831'
@@ -68,7 +72,7 @@ plt.plot(anos, ot, label='Outras Regiões')
 
 plt.xlabel('Anos', color='#ececec')
 plt.ylabel('Nº de vendas em milhões', color='#ececec')
-plt.title(f'Número de Vendas da {publisher.capitalize()}', fontweight='bold')
+plt.title(f'Número de Vendas da {publisher.title()}', fontweight='bold')
 
 plt.grid(True, which='both', axis='both', alpha=0.5, linestyle=':', color='#ececec')
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), shadow=True, ncol=2)

@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ba292c6-0f2a-450a-953d-bfb632938d78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/publishers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ArquivosFinais/snek.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Gráfico5 - Vendas para X Publisher" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Gráfico5 - Vendas para X Publisher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
       <recent name="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.publishers">
+  <component name="RunManager" selected="Python.Grafico5-Vendas_Publisher">
     <configuration name="Grafico2-Notas (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.publishers" />
         <item itemvalue="Python.Grafico5-Vendas_Publisher" />
+        <item itemvalue="Python.publishers" />
         <item itemvalue="Python.Menu" />
         <item itemvalue="Python.Grafico2-Notas (1)" />
         <item itemvalue="Python.Grafico4-Jogos" />
@@ -237,22 +236,22 @@
       <screen x="0" y="0" width="1603" height="862" />
     </state>
     <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1603.862@0.0.1603.862" timestamp="1606592575941" />
-    <state width="796" height="734" key="GridCell.Tab.0.bottom" timestamp="1606598467322">
+    <state width="397" height="586" key="GridCell.Tab.0.bottom" timestamp="1606615465518">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="796" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606598467322" />
-    <state width="796" height="734" key="GridCell.Tab.0.center" timestamp="1606598467322">
+    <state width="397" height="586" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606615465518" />
+    <state width="397" height="586" key="GridCell.Tab.0.center" timestamp="1606615465518">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="796" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606598467322" />
-    <state width="796" height="734" key="GridCell.Tab.0.left" timestamp="1606598467322">
+    <state width="397" height="586" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606615465518" />
+    <state width="397" height="586" key="GridCell.Tab.0.left" timestamp="1606615465518">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="796" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606598467322" />
-    <state width="796" height="734" key="GridCell.Tab.0.right" timestamp="1606598467322">
+    <state width="397" height="586" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606615465518" />
+    <state width="397" height="586" key="GridCell.Tab.0.right" timestamp="1606615465518">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="796" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606598467322" />
+    <state width="397" height="586" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606615465518" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1606515095621">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
