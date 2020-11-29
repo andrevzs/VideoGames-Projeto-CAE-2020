@@ -47,12 +47,25 @@ def grafico6():
 x = grafico6()
 
 def plot6(ano, mediaC, mediaU):
-    plt.plot(ano, mediaC, label='Media de notas da Critica')
-    plt.plot(ano, mediaU, label='Media de notas dos Usuarios')
-    plt.ylabel('Notas')
-    plt.xlabel('Anos')
-    plt.title('Media de notas dos criticos x usuarios por ano')
-    plt.legend(loc='upper left')
+    plt.style.use('dark_background')
+    plt.rcParams['figure.facecolor'] = '#222831'
+    plt.rcParams['axes.facecolor'] = '#222831'
+    plt.rcParams['text.color'] = '#ececec'
+    plt.rcParams['xtick.color'] = '#ececec'
+    plt.rcParams['ytick.color'] = '#ececec'
+    plt.rcParams['axes.labelcolor'] = '#ececec'
+
+
+    plt.plot(ano, mediaC, label='Media Criticos')
+    plt.plot(ano, mediaU, label='Media Usuarios')
+
+    plt.xlabel('Anos', color='#ececec')
+    plt.ylabel('Notas', color='#ececec')
+    plt.title('Media de notas por ano Critico x Usuarios', fontweight='bold')
+
+    plt.grid(True, which='both', axis='both', alpha=0.5, linestyle=':', color='#ececec')
+    plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), shadow=True, ncol=2)
+    plt.tight_layout()
     plt.show()
 
 plot6(x[0], x[1], x[2])
