@@ -66,7 +66,7 @@ def plot1(ano, na, eu, jp, other):
     plt.plot(ano, other, label='Outras Regioes')
 
     if fini == 0:
-        plt.axis([1977, 2019, 0, 0])
+        plt.axis([1977, 2019, 0, 400])
     else:
         plt.axis([ini, fini, 0, max(na) + 25])
     plt.ylabel('Nº de vendas em milhoes')
