@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 vg = pd.read_csv('VideoGames.csv', sep=',')
 
-def gráfico1(x, y): # x = ano de inicio do intervalo de tempo; y = ano de fim do intervalo de tempo.
+def grafico1(x, y): # x = ano de inicio do intervalo de tempo; y = ano de fim do intervalo de tempo.
     anos = []
     periodo = []
     na_sales    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -52,17 +52,17 @@ def plot1(ano, na, eu, jp, other):
     plt.plot(ano, na, label='Vendas NA')
     plt.plot(ano, eu, label='Vendas EU')
     plt.plot(ano, jp, label='Vendas JP')
-    plt.plot(ano, other, label='Outras Regiões')
+    plt.plot(ano, other, label='Outras Regioes')
 
-    plt.ylabel('Nº de vendas em milhões')
+    plt.ylabel('Nº de vendas em milhoes')
     plt.xlabel('Anos')
-    plt.title('Número de Vendas ~ Região/Ano')
+    plt.title('Numero de Vendas - Regiao/Ano')
     plt.legend()
     plt.show()
 
 x = int(input('Digite o ano de inicio'))
 y = int(input('Digite o ano final'))
-f = gráfico1(x, y)
+f = grafico1(x, y)
 print(len(f[0]), len(f[1]), len(f[2]), len(f[3]), len(f[4]))
 for i in range(len(f[0])):
     print(f"o ano {f[0][i]} teve vendas Na: {f[1][i]} Eu: {f[2][i]} Jp: {f[3][i]} Outros: {f[4][i]}")
