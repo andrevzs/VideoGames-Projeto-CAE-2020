@@ -47,6 +47,17 @@ def grafico1(x, y): # x = ano de inicio do intervalo de tempo; y = ano de fim do
                         other_sales[j] += otli
 
     return anos, na_sales, eu_sales, jp_sales, other_sales
+
+op = input('Deseja escolher um intervalo de anos? [S/N] ')
+if op.upper() == 'N':
+    ini = 0 
+    fini = 0
+if op.upper() == 'S':
+    ini = int(input('\nDigite o primeiro ano: '))
+    fini = int(input('Digite o segundo ano: '))
+
+k = grafico1(ini, fini)
+
 def plot1(ano, na, eu, jp, other):
 
     plt.plot(ano, na, label='Vendas NA')
@@ -54,17 +65,15 @@ def plot1(ano, na, eu, jp, other):
     plt.plot(ano, jp, label='Vendas JP')
     plt.plot(ano, other, label='Outras Regioes')
 
+    if fini == 0:
+        plt.axis([1977, 2019, 0, 0])
+    else:
+        plt.axis([ini, fini, 0, max(na) + 25])
     plt.ylabel('Nº de vendas em milhoes')
     plt.xlabel('Anos')
     plt.title('Numero de Vendas - Regiao/Ano')
     plt.legend()
     plt.show()
 
-x = int(input('Digite o ano de inicio'))
-y = int(input('Digite o ano final'))
-f = grafico1(x, y)
-print(len(f[0]), len(f[1]), len(f[2]), len(f[3]), len(f[4]))
-for i in range(len(f[0])):
-    print(f"o ano {f[0][i]} teve vendas Na: {f[1][i]} Eu: {f[2][i]} Jp: {f[3][i]} Outros: {f[4][i]}")
 
-plot1(f[0], f[1], f[2], f[3], f[4])
+plot1(k[0], k[1], k[2], k[3], k[4])
