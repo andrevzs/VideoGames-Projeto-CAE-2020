@@ -49,12 +49,17 @@ def grafico1(x, y): # x = ano de inicio do intervalo de tempo; y = ano de fim do
     return anos, na_sales, eu_sales, jp_sales, other_sales
 
 op = input('Deseja escolher um intervalo de anos? [S/N] ')
+
+continuar = False
 if op.upper() == 'N':
     ini = 0 
     fini = 0
 if op.upper() == 'S':
-    ini = int(input('\nDigite o primeiro ano: '))
-    fini = int(input('Digite o segundo ano: '))
+    while continuar == False:
+        ini = int(input('\nDigite o primeiro ano: '))
+        fini = int(input('Digite o segundo ano: '))
+        if fini >= ini:
+            continuar = True
 
 k = grafico1(ini, fini)
 
