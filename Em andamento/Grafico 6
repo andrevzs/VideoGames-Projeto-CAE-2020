@@ -45,9 +45,14 @@ def grafico6():
     return anos, MediaCritico, MediaUsuario, qnt
 
 x = grafico6()
-print(x[3])
-print(len(x[1]))
-print(len(x[2]))
-for i in range(len(x[0])):
-    if x[1] != 0:
-        print(f"Para o ano de {x[0][i]}, a nota média dos criticos foi de: {x[1][i]} e a nota dos jogadores foi: {x[2][i]} com a quantidade de review {x[3][i]}")
+
+def plot6(ano, mediaC, mediaU):
+    plt.plot(ano, mediaC, label='Media de notas da Critica')
+    plt.plot(ano, mediaU, label='Media de notas dos Usuarios')
+    plt.ylabel('Notas')
+    plt.xlabel('Anos')
+    plt.title('Media de notas dos criticos x usuarios por ano')
+    plt.legend(loc='upper left')
+    plt.show()
+
+plot6(x[0], x[1], x[2])
