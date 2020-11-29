@@ -27,7 +27,7 @@ def graf4():
         mxm = max(njogos)
         top_njogos.append(mxm)
 
-        posj = top_njogos.index(mxm)
+        posj = njogos.index(mxm)
         top_console.append(console[posj])
 
         njogos[posj] = 0
