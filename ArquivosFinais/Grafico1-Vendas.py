@@ -143,5 +143,5 @@ if op_valida:
                         print('Digite o ano como um numero inteiro de 4 digitos!\n')
                 if ano2_valido:
                     # Variavel que quando chamada executa a funcao de calculo dos dados que irao para o grafico
-                    exe = graf1(ano1, ano2)
+                    exe = graf1(int(ano1), int(ano2))
                     mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])

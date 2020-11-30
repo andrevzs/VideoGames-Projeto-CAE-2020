@@ -10,10 +10,11 @@
 # Importacao de bibliotecas que serao usadas no programa
 import pandas as pd
 import matplotlib.pyplot as plt
+import random
+import math
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'  # Funcao que impede o pygame de exibir a mensagem de boas vindas
 import pygame
-import random
 
 
 # Configuracoes para a plotagem dos graficos
