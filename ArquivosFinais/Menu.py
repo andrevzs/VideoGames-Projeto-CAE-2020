@@ -1,175 +1,110 @@
-import pandas as pd
+# VideoGames-Projeto-CAE-2020
+# Menu
 
+# Criado por:
+# Andre Vinicius Zicka Schmidt
+# Eduardo Scaburi Costa Barros
+# Pedro Eduardo Galvan Moreira
+# <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
+
+# Importacao de bibliotecas que serao usadas no programa
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'  # Funcao que impede o pygame de exibir a mensagem de boas vindas
+import pygame
+import random
+
+
+# Configuracoes para a plotagem dos graficos
+plt.style.use('dark_background')
+plt.rcParams['figure.facecolor'] = '#222831'  # Cor da parte externa do grafico
+plt.rcParams['axes.facecolor']   = '#222831'  # Cor da parte interna do grafico
+plt.rcParams['text.color']       = '#ececec'  # Cor de textos
+plt.rcParams['xtick.color']      = '#ececec'  # Cor do eixo x
+plt.rcParams['ytick.color']      = '#ececec'  # Cor do eixo y
+plt.rcParams['axes.labelcolor']  = '#ececec'  # Cor dos rotulos dos eixos
+
+
+# Codigo principal
+# Leitura do arquivo CSV
 vg = pd.read_csv('VideoGames.csv', sep=',')
 
-t = True
+# Variavel que faz o menu continuar sendo exibido
+exibir = True
 
-print('='*10, 'VIDEOGAMES - Projeto CAE 2020', '='*11)
+print('')  # Linha vazia apenas para estetica
+print('='*14, 'VIDEOGAMES - Projeto CAE 2020', '='*15)  # Titulo do menu
 
-while t:
-    print('=-'*26, '\n'
-          '[1] Vendas de Jogos por Região       (Graf. Linhas)\n'
-          '[2] Frequência de Notas (Review)     (Graf. Barras)\n'
+# Enquanto o menu nao for encerrado pelo usuario:
+while exibir:
+    # Mostrar informacoes do programa
+    print('=-'*30, '\n'
+                   ' Esse programa consegue exibir graficos fazendo uso de um\n'
+                   ' arquivo CSV que contem diversos dados estatisticos sobre\n'
+                   ' videogames entre os anos de 1977 e 2018.\n\n'
+                   ' Se quiser, digite uma das opcoes para exibir um grafico:')
+    # Mostrar opcoes de grafico
+    print('=-'*30, '\n'
+          '[1] Vendas de Jogos por Regiao       (Graf. Linhas)\n'
+          '[2] Frequencia de Notas (Review)     (Graf. Barras)\n'
           '[3] 10 Generos Mais Vendidos         (Graf. Barras)\n'
           '[4] Num. de Jogos por Plataforma     (Graf. Barras)\n'
           '[5] Vendas por Publisher             (Graf. Linhas)\n'
+          '[6] Media de Notas por Ano           (Graf. Linhas)\n'
           '[0] Encerrar programa')
-    print('~'*52)
+    print('~'*60)
 
-    op_valida = False
+    op_valida = False  # Boolenao dependente da opcao digitada pelo usuario ser valida ou nao
+    # Enquanto a opcao nao for valida, pedir opcao para o usuario, e checar validade
     while not op_valida:
-        opcao = input('Digite uma das opções: ')
+        opcao = input('Opcao: ')
         try:
+            # Se for possivel converter o input do usuario para um numero inteiro, retorna True, caso contrario, retorna False
             int(opcao)
-            if 0 <= int(opcao) <= 5:
+            if int(opcao) == 100:  # Opcao secreta
+                exec(open('snek.py').read())
+            if 0 <= int(opcao) <= 6:  # Se a opcao estiver no menu (de 0 a 6), a opcao se torna valida
                 op_valida = True
+            # Caso o usuario nao escolha a opcao secreta e digite uma opcao que nao esta no menu
             else:
-                print('Putz! Só tem 5 opções no menu!\n')
+                print('Putz! Só tem 5 opções no menu!\n')  # Essa mensagem de erro é exibida e o input é solicitado novamente
                 op_valida = False
+        # Caso aconteca um erro por nao ser possivel converter o input para um numero inteiro
+        # O input é solicitado novamente
         except ValueError:
             print('= Oops... você deve digitar a opção como um número inteiro! =\n')
             op_valida = False
 
+    # Caso a opcao digitada pelo usuario seja valida
+    # Ocorre a execucao dos programas para cada grafico
+    # Cada grafico foi escrito em um arquivo .py separado que é aberto usando a funcao exec(open('...').read())
     if op_valida:
         # Gráfico 1
         if int(opcao) == 1:
-            print('\nSelecione uma forma de gerar o gráfico:\n'
-                  '[1] Para todos os anos\n'
-                  '[2] Definir um intervalo de anos')
-            tipo_valido = False
-            while not tipo_valido:
-                tipo = input('Opção: ')
-                try:
-                    int(tipo)
-                    if 1 <= int(tipo) <= 2:
-                        tipo_valido = True
-                    else:
-                        print('-ERRO!- Digite apenas 1 ou 2.\n')
-                        tipo_valido = False
-                except ValueError:
-                    print('= Oops... você deve digitar a opção como um número inteiro! =\n')
-                    tipo_valido = False
-            if int(tipo) == 1:
-                pass  # Executar gráfico pra todos os anos
-
-            if int(tipo) == 2:
-                anoi_valido = False
-                while not anoi_valido:
-                    ano_i = input('Digite o 1º ano:(entre 1977 e 2018) ')
-                    try:
-                        int(ano_i)
-                        if 1977 <= int(ano_i) <= 2018:
-                            anoi_valido = True
-                        else:
-                            print('Ano Inicial deve estar entre 1977 e 2018\n')
-                            anoi_valido = False
-                    except ValueError:
-                        print('O Ano Inicial deve ser digitado como um número inteiro de 4 dígitos.\n')
-                        anoi_valido = False
-
-                if anoi_valido:
-                    anof_valido = False
-                    while not anof_valido:
-                        ano_f = input(f'Digite o 2º ano:(entre {ano_i} e 2018) ')
-                        try:
-                            int(ano_f)
-                            if int(ano_i) <= int(ano_f) <= 2018:
-                                anof_valido = True
-                            else:
-                                print(f'Ano Final deve estar entre {ano_i} e 2018\n')
-                                anof_valido = False
-                        except ValueError:
-                            print('O Ano Final deve ser digitado como um número inteiro de 4 dígitos.\n')
-                            anof_valido = False
-
-                    if anof_valido:
-                        pass  # graf1(ano_i, ano_f)
+            exec(open('Grafico1-Vendas.py').read())
 
         # Gráfico 2
         elif int(opcao) == 2:
-            pass
+            exec(open('Grafico2-Notas.py').read())
 
         # Gráfico 3
         elif int(opcao) == 3:
-            print('\nSelecione uma forma de gerar o gráfico:\n'
-                  '[1] Para todos os anos\n'
-                  '[2] Definir um intervalo de anos\n'
-                  '[3] Ano específico')
-            tipo_valido = False
-            while not tipo_valido:
-                tipo = input('Opção: ')
-                try:
-                    int(tipo)
-                    if 1 <= int(tipo) <= 3:
-                        tipo_valido = True
-                    else:
-                        print('-ERRO!- Digite apenas 1, 2 ou 3.\n')
-                        tipo_valido = False
-                except ValueError:
-                    print('= Oops... você deve digitar a opção como um número inteiro! =\n')
-                    tipo_valido = False
-
-                if int(tipo) == 2:
-                    anoi_valido = False
-                    while not ano_i:
-                        ano_i = input('Digite o 1º ano:(entre 1977 e 2018 ')
-                        try:
-                            int(ano_i)
-                            if 1977 <= int(ano_i) <= 2018:
-                                anoi_valido = True
-                            else:
-                                print('Ano Inicial deve estar entre 1977 e 2018\n')
-                                anoi_valido = False
-                        except ValueError:
-                            print('O Ano Inicial deve ser gitiado como um número inteiro de 4 dígitos.\n')
-                            anoi_valido = False
-
-                        if anoi_valido:
-                            anof_valido = False
-                            while not anof_valido:
-                                ano_f = input(f'Digite o 2º ano:(entre {ano_i} e 2018) ')
-                                try:
-                                    int(ano_f)
-                                    if int(ano_i) <= int(ano_f) <= 2018:
-                                        anof_valido = True
-                                    else:
-                                        print(f'Ano Final deve estar entre {ano_i} e 2018\n')
-                                        anof_valido = False
-                                except ValueError:
-                                    print('O Ano Final deve ser digitado como um número inteiro de 4 dígitos.')
-                                    anof_valido = False
-
-                                if anof_valido:
-                                    pass  # graf3(ano_i, ano_f)
-
-                if int(tipo) == 3:
-                    ano_valido = False
-                    while not ano_valido:
-                        op_ano = input('Digite o ano:(entre 1977 e 2018) ')
-                        try:
-                            int(op_ano)
-                            if 1977 <= int(op_ano) <= 2018:
-                                op_valida = True
-                            else:
-                                op_valida = False
-                                print('O ano deve estar entre 1977 e 2018!')
-                                op_ano = input('Digite o ano: ')
-                        except ValueError:
-                            print('O ano deve ser digitado como um número inteiro de 4 dígitos.\n')
-                            op_valida = False
-                            
-                    if op_valida:
-                        pass  # graf3(op_ano, 0)
+            exec(open('Grafico3-Generos.py').read())
 
         # Gráfico 4
         elif int(opcao) == 4:
-            pass
+            exec(open('Grafico4-Jogos.py').read())
 
         # Gráfico 5
         elif int(opcao) == 5:
-            pass
+            exec(open('Grafico5-Vendas_Publisher.py').read())
+
+        # Grafico 6
+        elif int(opcao) == 6:
+            exec(open('Grafico6-Medias.py').read())
 
         # Sair
         elif int(opcao) == 0:
             op_valida = False
-            t = False
+            exibir = False
