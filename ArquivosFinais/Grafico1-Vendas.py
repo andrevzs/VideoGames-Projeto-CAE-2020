@@ -111,6 +111,9 @@ if op_valida:
     if op.upper() == 'N':
         ano1 = 0
         ano2 = 0
+        exe = graf1(ano1, ano2)
+
+        mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
     if op.upper() == 'S':
         while not continuar:
             ano1_valido = False
@@ -146,4 +149,4 @@ if op_valida:
                     # Variavel que quando chamada executa a funcao de calculo dos dados que irao para o grafico
                     exe = graf1(ano1, ano2)
 
-mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
+                    mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
