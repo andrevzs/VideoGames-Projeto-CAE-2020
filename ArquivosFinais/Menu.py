@@ -25,6 +25,7 @@ plt.rcParams['text.color']       = '#ececec'  # Cor de textos
 plt.rcParams['xtick.color']      = '#ececec'  # Cor do eixo x
 plt.rcParams['ytick.color']      = '#ececec'  # Cor do eixo y
 plt.rcParams['axes.labelcolor']  = '#ececec'  # Cor dos rotulos dos eixos
+plt.figure(figsize=(10, 7))
 
 
 # Codigo principal
