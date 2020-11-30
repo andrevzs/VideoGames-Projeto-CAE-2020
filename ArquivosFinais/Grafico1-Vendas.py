@@ -6,7 +6,9 @@
 # Eduardo Scaburi Costa Barros
 # Pedro Eduardo Galvan Moreira
 # <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
-
+import matplotlib.pyplot as plt
+import pandas as pd
+vg = pd.read_csv('VideoGames.csv', sep=",")
 
 def graf1(x, y):  # x = ano inicial do intervalo de tempo, y = ano final do intervalo de tempo
     anos = []  # Lista de anos
@@ -67,7 +69,6 @@ def graf1(x, y):  # x = ano inicial do intervalo de tempo, y = ano final do inte
 
 
 def mostrar(ano, na, eu, jp, other):
-
     plt.plot(ano, na,    label='Vendas NA',      linewidth=2.5)
     plt.plot(ano, eu,    label='Vendas EU',      linewidth=2.5)
     plt.plot(ano, jp,    label='Vendas JP',      linewidth=2.5)
@@ -76,7 +77,8 @@ def mostrar(ano, na, eu, jp, other):
     if ano2 == 0:
         plt.axis([1977, 2019, 0, 400])
     else:
-        plt.axis([ano1, ano2, 0, max(na) + 25])
+        plt.axis([int(ano1), int(ano2), 0, max(na) + 25])
+
     plt.xlabel('Anos')
     plt.ylabel('Numero de vendas em milhoes')
     plt.title('Numero de Vendas Regioes/Ano', fontweight='bold')
@@ -109,8 +111,6 @@ if op_valida:
     if op.upper() == 'N':
         ano1 = 0
         ano2 = 0
-        exe = graf1(ano1, ano2)
-        mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
     if op.upper() == 'S':
         while not continuar:
             ano1_valido = False
@@ -135,6 +135,7 @@ if op_valida:
                         int(ano2)
                         if int(ano2) >= int(ano1):
                             ano2_valido = True
+                            continuar = True
                         else:
                             print('Caramba, deu erro!\n'
                                   f'Por favor escolha um ano apenas entre {ano1} e 2018.\n')
@@ -143,5 +144,6 @@ if op_valida:
                         print('Digite o ano como um numero inteiro de 4 digitos!\n')
                 if ano2_valido:
                     # Variavel que quando chamada executa a funcao de calculo dos dados que irao para o grafico
-                    exe = graf1(int(ano1), int(ano2))
-                    mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
+                    exe = graf1(ano1, ano2)
+
+mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
