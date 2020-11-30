@@ -46,12 +46,12 @@ while exibir:
                    ' Se quiser, digite uma das opcoes para exibir um grafico:')
     # Mostrar opcoes de grafico
     print('=-'*30, '\n'
-          '[1] Vendas de Jogos por Regiao       (Graf. Linhas)\n'
-          '[2] Frequencia de Notas (Review)     (Graf. Barras)\n'
-          '[3] 10 Generos Mais Vendidos         (Graf. Barras)\n'
-          '[4] Num. de Jogos por Plataforma     (Graf. Barras)\n'
-          '[5] Vendas por Publisher             (Graf. Linhas)\n'
-          '[6] Media de Notas por Ano           (Graf. Linhas)\n'
+          '[1] Vendas de Jogos por Regiao                (Graf. Linhas)\n'
+          '[2] Frequencia de Notas (Review)              (Graf. Barras)\n'
+          '[3] 10 Generos Mais Vendidos                  (Graf. Barras)\n'
+          '[4] Num. de Jogos por Plataforma              (Graf. Barras)\n'
+          '[5] Vendas por Publisher                      (Graf. Linhas)\n'
+          '[6] Media de Notas por Ano                    (Graf. Linhas)\n'
           '[0] Encerrar programa')
     print('~'*60)
 
