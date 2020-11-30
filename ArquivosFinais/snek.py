@@ -1,6 +1,13 @@
+# VideoGames-Projeto-CAE-2020
+# Easter Egg
+
+# Criado por:
+# Andre Vinicius Zicka Schmidt
+# Eduardo Scaburi Costa Barros
+# Pedro Eduardo Galvan Moreira
+# <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
+
 # Codigo criado com base no site < edureka.co >
-import pygame
-import random
 
 pygame.init()  # Inicializa os modulos do PyGame
 
