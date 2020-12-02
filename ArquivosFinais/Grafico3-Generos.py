@@ -1,9 +1,11 @@
 # Gráfico 3 (Barras) - Top 10 Gêneros mais vendidos
-import pandas as pd
-import matplotlib.pyplot as plt
 
-# Ler CSV
-vg = pd.read_csv('VideoGames.csv')
+# Criado por:
+# Andre Vinicius Zicka Schmidt
+# Eduardo Scaburi Costa Barros
+# Pedro Eduardo Galvan Moreira
+# <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
+
 
 # Gerar lista com total de vendas
 total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -22,20 +24,11 @@ def graf3(ano_i, ano_f):
         gnr  = li['Genre']                 # Selecionar coluna de genero
         ano  = int(li['Year_of_Release'])  # Selecionar coluna do ano de lançamento
 
-        # Se nao houver um intevalo de anos selecionado
-        if ano_i == 0 and ano_f == 0:
+        # Se o ano do CSV estiver entre os valores do intervalo
+        if int(ano_i) <= ano <= int(ano_f):
             for j in range(len(lstgen)):
-                # E se o genero da linha for igual ao genero atual checado
                 if gnr == lstgen[j]:
-                    total[j] += glob  # Somar o valor de vendas a lista do total,
-                    # A posicao j representa o genero que esta sendo contabilizado
-
-        else:  # Caso o usuario tenha definido um intervalo de anos
-            # Se o ano do CSV estiver entre os valores do intervalo
-            if int(ano_i) <= ano <= int(ano_f):
-                for j in range(len(lstgen)):
-                    if gnr == lstgen[j]:
-                        total[j] += glob  # Somar o valor de vendas a lista do total
+                    total[j] += glob  # Somar o valor de vendas a lista do total
 
     # Lista com os 10 maiores valores de vendas e os 10 generos mais vendidos
     top10vendas = []
@@ -53,25 +46,67 @@ def graf3(ano_i, ano_f):
     
 
 # Usuario deve informar os anos que deseja exibir
-op = input('Deseja escolher um intervalo de anos? [S/N] ')
-continuar = False
-if op.upper() == 'N':
-    ini = 0 
-    fini = 0
-if op.upper() == 'S':
-    while not continuar:
-        ini = int(input('\nDigite o primeiro ano: '))
-        fini = int(input('Digite o segundo ano: '))
-        if fini >= ini:
-            continuar = True   
-k = graf3(ini, fini)
+op_valida = False
+while not op_valida:
+    op = input('Deseja escolher um intervalo de anos? [S/N] ')
+    try:
+        str(op)
+        if op.upper() == 'S' or op.upper() == 'N':
+            op_valida = True
+        else:
+            print('Putz Grila! Voce causou um erro!\n'
+                  'Digite apenas S ou N, por favor.\n')
+            op_valida = False
+    except ValueError:
+        print('Putz Grila! Voce causou um erro!\n'
+              'Digite apenas S ou N, por favor.\n')
+        op_valida = False
+
+ano1_valido = False
+ano2_valido = False
+
+if op_valida:
+    if op.upper() == 'N':
+        ano1 = 1977
+        ano2 = 2018
+    if op.upper() == 'S':
+        while not ano1_valido:
+            ano1 = input('Digite o primeiro ano: ')
+            try:
+                int(ano1)
+                if 1977 <= int(ano1) <= 2018:
+                    ano1_valido = True
+                else:
+                    print('- ERRO! -\nDigite um ano entre 1977 e 2018.\n')
+                    ano1_valido = False
+            except ValueError:
+                print('Errou! Digite o ano como um numero inteiro de 4 digitos!\n')
+                ano1_valido = False
+
+        if ano1_valido:
+            while not ano2_valido:
+                ano2 = input('Digite o segundo ano: ')
+                try:
+                    int(ano2)
+                    if int(ano1) <= int(ano2) <= 2018:
+                        ano2_valido = True
+                    else:
+                        print(f'- ERRO! -\nDigite um ano entre {ano1} e 2018.\n')
+                        ano2_valido = False
+                except ValueError:
+                    print('Errou! Digite o ano como um numero inteiro de 4 digitos!\n')
+                    ano2_valido = False
+
+if ano2_valido:
+    a = graf3(ano1, ano2)
 
 
-plt.bar(k[0], k[1], color=['silver', 'salmon', 'bisque', 'gold', 'limegreen', 'turquoise', 'lightskyblue', 'plum', 'hotpink', 'crimson'])
+plt.bar(a[0], a[1], color=['silver', 'salmon', 'bisque', 'gold', 'limegreen', 'turquoise', 'lightskyblue', 'plum', 'hotpink', 'crimson'])
 
 plt.xlabel('Generos')
 plt.ylabel('Vendas')
-plt.title('Top 10 Generos Mais Vendidos')
+plt.title('Top 10 Generos Mais Vendidos', fontweight='bold')
 
+plt.grid(True, which='both', axis='y', alpha=0.5, linestyle=':', color='#ececec')
 plt.tight_layout()
 plt.show()
