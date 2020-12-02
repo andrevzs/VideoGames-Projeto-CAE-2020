@@ -8,7 +8,6 @@
 # <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
 
 # Codigo criado com base no site < edureka.co >
-
 pygame.init()  # Inicializa os modulos do PyGame
 
 # Cores

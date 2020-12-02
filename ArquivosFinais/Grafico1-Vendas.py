@@ -147,6 +147,7 @@ if op_valida:
                             ano2_valido = False
                     except ValueError:
                         print('Digite o ano como um numero inteiro de 4 digitos!\n')
+                        ano2_valido = False
                 if ano2_valido:
                     exe = graf1(ano1, ano2)
 

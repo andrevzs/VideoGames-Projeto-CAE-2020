@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba292c6-0f2a-450a-953d-bfb632938d78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico3-Generos.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico3-Generos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico4-Jogos.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico4-Jogos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico1-Vendas.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico1-Vendas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico6-Medias.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico6-Medias.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArquivosFinais/snek.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/snek.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,22 +237,22 @@
       <screen x="0" y="0" width="1603" height="862" />
     </state>
     <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1603.862@0.0.1603.862" timestamp="1606592575941" />
-    <state width="704" height="734" key="GridCell.Tab.0.bottom" timestamp="1606911407019">
+    <state width="704" height="734" key="GridCell.Tab.0.bottom" timestamp="1606915493865">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="704" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606911407019" />
-    <state width="704" height="734" key="GridCell.Tab.0.center" timestamp="1606911407019">
+    <state width="704" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606915493865" />
+    <state width="704" height="734" key="GridCell.Tab.0.center" timestamp="1606915493865">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="704" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606911407019" />
-    <state width="704" height="734" key="GridCell.Tab.0.left" timestamp="1606911407019">
+    <state width="704" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606915493865" />
+    <state width="704" height="734" key="GridCell.Tab.0.left" timestamp="1606915493865">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="704" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606911407019" />
-    <state width="704" height="734" key="GridCell.Tab.0.right" timestamp="1606911407019">
+    <state width="704" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606915493865" />
+    <state width="704" height="734" key="GridCell.Tab.0.right" timestamp="1606915493865">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="704" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606911407019" />
+    <state width="704" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606915493865" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1606515095621">
       <screen x="0" y="0" width="1603" height="862" />
     </state>

@@ -106,7 +106,7 @@ while exibir:
         elif int(opcao) == 6:
             exec(open('Grafico6-Medias.py').read())
 
-        # Sair
+        # Encerrar
         elif int(opcao) == 0:
             op_valida = False
             exibir = False
