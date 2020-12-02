@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 vg = pd.read_csv('VideoGames.csv', sep=",")
 
+
 def graf1(x, y):  # x = ano inicial do intervalo de tempo, y = ano final do intervalo de tempo
     anos = []  # Lista de anos
 
@@ -68,16 +69,15 @@ def graf1(x, y):  # x = ano inicial do intervalo de tempo, y = ano final do inte
     return anos, na_sales, eu_sales, jp_sales, other_sales
 
 
+# Funcao que define como sera  aplotagem do grafico
 def mostrar(ano, na, eu, jp, other):
+    # Cada plot representa uma linha do grafico
     plt.plot(ano, na,    label='Vendas NA',      linewidth=2.5)
     plt.plot(ano, eu,    label='Vendas EU',      linewidth=2.5)
     plt.plot(ano, jp,    label='Vendas JP',      linewidth=2.5)
     plt.plot(ano, other, label='Outras Regioes', linewidth=2.5)
 
-    if ano2 == 0:
-        plt.axis([1977, 2019, 0, 400])
-    else:
-        plt.axis([int(ano1), int(ano2), 0, max(na) + 25])
+    plt.axis([int(ano1), int(ano2), 0, max(na) + 25])
 
     plt.xlabel('Anos')
     plt.ylabel('Numero de vendas em milhoes')
@@ -108,13 +108,18 @@ while not op_valida:
 # O codigo so continua executando se a opcao escolhida pelo usuario for valida
 if op_valida:
     continuar = False
+    # Se o usuario nao quiser um intervalo de anos, ano1 e ano2 se tornam os valores limite
     if op.upper() == 'N':
-        ano1 = 0
-        ano2 = 0
+        ano1 = 1977
+        ano2 = 2018
+        # Variavel que quando chamada executa a funcao de calculo dos dados que irao para o grafico
         exe = graf1(ano1, ano2)
 
-        mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
+        mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])  # Chama a funcao de plotagem
+
+    # Se o usuario quiser um intervalo de anos, solicitar anos
     if op.upper() == 'S':
+        # Checagem de erros do usuario
         while not continuar:
             ano1_valido = False
             ano2_valido = False
@@ -129,14 +134,14 @@ if op_valida:
                               'Por favor escolha um ano apenas entre 1977 e 2018.\n')
                         ano1_valido = False
                 except ValueError:
-                    print('Digite o ano como um numero inteiro de 4 digitos!\n')
+                    print('- ERRO! - \nDigite o ano como um numero inteiro de 4 digitos!\n')
                     ano1_valido = False
             if ano1_valido:
                 while not ano2_valido:
                     ano2 = input('Digite o segundo ano: ')
                     try:
                         int(ano2)
-                        if int(ano2) >= int(ano1):
+                        if int(ano1) <= int(ano2) <= 2018:
                             ano2_valido = True
                             continuar = True
                         else:
@@ -146,7 +151,6 @@ if op_valida:
                     except ValueError:
                         print('Digite o ano como um numero inteiro de 4 digitos!\n')
                 if ano2_valido:
-                    # Variavel que quando chamada executa a funcao de calculo dos dados que irao para o grafico
                     exe = graf1(ano1, ano2)
 
                     mostrar(exe[0], exe[1], exe[2], exe[3], exe[4])
