@@ -1,10 +1,14 @@
-import pandas as pd
-import math
-import matplotlib.pyplot as plt
+# VideoGames-Projeto-CAE-2020
+# Grafico 2 - Notas para Genero
+
+# Criado por:
+# Andre Vinicius Zicka Schmidt
+# Eduardo Scaburi Costa Barros
+# Pedro Eduardo Galvan Moreira
+# <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
 
 
-vg = pd.read_csv('VideoGames.csv', sep=',')
-
+# Funcao que gera e plota o grafico 2
 def graf2():
     generos = ['ACTION', 'ADVENTURE', 'FIGHTING', 'MISC', 'PLATFORM', 'PUZZLE', 'RACING', 'ROLE-PLAYING', 'SHOOTER', 'SIMULATION', 'SPORTS', 'STRATEGY']
 
@@ -15,6 +19,8 @@ def graf2():
 
         # Usuário fornece gênero
         print('= Opcoes de Genero =\nAction, Sports, Misc, Role-Playing, Shooter,', '\nAdventure, Racing, Platform, Simulation, Fighting, Strategy, Puzzle')
+
+        # Checagem de erros no input
         while valido1 is False:
             gen = input('\nDigite um genero: ')
             try:
@@ -49,25 +55,18 @@ def graf2():
             # Plot histograma barras agrupadas
             # Eixo X: nota
             # Eixo Y: frequência
-            plt.style.use('dark_background')
-            plt.rcParams['figure.facecolor'] = '#222831'
-            plt.rcParams['axes.facecolor'] = '#222831'
-            plt.rcParams['text.color'] = '#ececec'
-            plt.rcParams['xtick.color'] = '#ececec'
-            plt.rcParams['ytick.color'] = '#ececec'
-            plt.rcParams['axes.labelcolor'] = '#ececec'
-            fig, a = plt.subplots()
+            plt.hist([n_players, n_critica], rwidth=0.85, color=['#30475e', '#f2a365'], label=['Players', 'Critica'])
 
-            a.hist([n_players, n_critica], rwidth=0.85, color=['#30475e', '#f2a365'], label=['Players', 'Critica'])
-
-            a.set_xlabel('Nota Recebida', color='#ececec')
-            a.set_ylabel('Ocorrencias da Nota', color='#ececec')
-            a.set_title(f'Notas da Critica e dos Jogadores para o genero {gen.capitalize()}', fontweight='bold')
+            plt.xlabel('Nota Recebida', color='#ececec')
+            plt.ylabel('Ocorrencias da Nota', color='#ececec')
+            plt.title(f'Notas da Critica e dos Jogadores para o genero {gen.capitalize()}', fontweight='bold')
 
             plt.grid(True, which='both', axis='y', alpha=0.5, linestyle=':', color='#ececec')
             plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), shadow=True, ncol=2)
             plt.tight_layout()
             plt.show()
-            valido1=False
-            rodar=False
+            valido1 = False
+            rodar   = False
+
+
 graf2()
