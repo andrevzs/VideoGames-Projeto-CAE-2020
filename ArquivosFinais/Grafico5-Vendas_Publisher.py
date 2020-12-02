@@ -71,8 +71,8 @@ plt.plot(anos, jp, label='Vendas JP')
 plt.plot(anos, ot, label='Outras Regiões')
 
 plt.xlabel('Anos', color='#ececec')
-plt.ylabel('Nº de vendas em milhões', color='#ececec')
-plt.title(f'Número de Vendas da {publisher.title()}', fontweight='bold')
+plt.ylabel('Num de vendas em milhões', color='#ececec')
+plt.title(f'Numero de Vendas da {publisher.title()}', fontweight='bold')
 
 plt.grid(True, which='both', axis='both', alpha=0.5, linestyle=':', color='#ececec')
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), shadow=True, ncol=2)

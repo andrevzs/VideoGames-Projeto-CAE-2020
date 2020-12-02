@@ -20,12 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ba292c6-0f2a-450a-953d-bfb632938d78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico6-Medias.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Projeto CAE - Grupo 7.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Video CAE.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico1-Vendas.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico1-Vendas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico2-Notas.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico2-Notas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico3-Generos.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico3-Generos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico4-Jogos.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico4-Jogos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/ArquivosFinais/Grafico5-Vendas_Publisher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Em andamento/Grafico 6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Roteiro.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
       <recent name="C:\Users\André\Documents\PUC\Computação Aplicada à Engenharia\VideoGames-Projeto-CAE-2020\ArquivosFinais" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Menu">
+  <component name="RunManager" selected="Python.Grafico6-Medias">
     <configuration name="Grafico1-Vendas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,6 +130,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Grafico6-Medias" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="VideoGames-Projeto-CAE-2020" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ArquivosFinais" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArquivosFinais/Grafico6-Medias.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="VideoGames-Projeto-CAE-2020" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,34 +172,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="snek" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="VideoGames-Projeto-CAE-2020" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ArquivosFinais" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ArquivosFinais/snek.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Grafico6-Medias" />
         <item itemvalue="Python.Menu" />
         <item itemvalue="Python.Grafico1-Vendas" />
         <item itemvalue="Python.Grafico3-Generos" />
         <item itemvalue="Python.Grafico2-Notas" />
-        <item itemvalue="Python.snek" />
       </list>
     </recent_temporary>
   </component>
@@ -239,22 +241,22 @@
       <screen x="0" y="0" width="1603" height="862" />
     </state>
     <state x="580" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1603.862@0.0.1603.862" timestamp="1606592575941" />
-    <state width="548" height="734" key="GridCell.Tab.0.bottom" timestamp="1606693966110">
+    <state width="585" height="734" key="GridCell.Tab.0.bottom" timestamp="1606906770969">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="548" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606693966110" />
-    <state width="548" height="734" key="GridCell.Tab.0.center" timestamp="1606693966110">
+    <state width="585" height="734" key="GridCell.Tab.0.bottom/0.0.1603.862@0.0.1603.862" timestamp="1606906770969" />
+    <state width="585" height="734" key="GridCell.Tab.0.center" timestamp="1606906770969">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="548" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606693966110" />
-    <state width="548" height="734" key="GridCell.Tab.0.left" timestamp="1606693966110">
+    <state width="585" height="734" key="GridCell.Tab.0.center/0.0.1603.862@0.0.1603.862" timestamp="1606906770969" />
+    <state width="585" height="734" key="GridCell.Tab.0.left" timestamp="1606906770969">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="548" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606693966110" />
-    <state width="548" height="734" key="GridCell.Tab.0.right" timestamp="1606693966110">
+    <state width="585" height="734" key="GridCell.Tab.0.left/0.0.1603.862@0.0.1603.862" timestamp="1606906770969" />
+    <state width="585" height="734" key="GridCell.Tab.0.right" timestamp="1606906770969">
       <screen x="0" y="0" width="1603" height="862" />
     </state>
-    <state width="548" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606693966110" />
+    <state width="585" height="734" key="GridCell.Tab.0.right/0.0.1603.862@0.0.1603.862" timestamp="1606906770969" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1606515095621">
       <screen x="0" y="0" width="1603" height="862" />
     </state>

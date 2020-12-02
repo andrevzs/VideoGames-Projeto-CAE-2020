@@ -45,7 +45,7 @@ def plot(v):
     plt.rcParams['xtick.color'] = '#ececec'
     plt.rcParams['ytick.color'] = '#ececec'
     plt.rcParams['axes.labelcolor'] = '#ececec'
-    plt.title('Quantidade de jogos lançados para cada console')
+    plt.title('Quantidade de jogos lancados para cada console')
     plt.xlabel('Consoles')
     plt.ylabel('Jogos')
     plt.bar(v[0], v[1])

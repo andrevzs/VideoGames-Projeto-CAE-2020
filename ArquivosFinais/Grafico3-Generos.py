@@ -66,26 +66,12 @@ if op.upper() == 'S':
             continuar = True   
 k = graf3(ini, fini)
 
-# Usuario deve informar quais cores deseja no grafico
-lst_cores = {'PRATA': 'silver', 'SALMAO': 'salmon', 'CREME': 'bisque', 'DOURADO': 'gold', 'VERDE-LIMAO': 'limegreen',
-             'TURQUESA': 'turquoise', 'AZUL': 'lightskyblue', 'ROSINHA': 'plum', 'ROSA': 'hotpink', 'VERMELHO': 'crimson'}
-cores = []
 
-for a in range(0, 10):
-    cores[a] = input(f'Digite um numero para selecionar uma cor para {top10gen[a]}:\n'
-                     '[1]  Prata\n'
-                     '[2]  Salmao\n'
-                     '[3]  Creme\n'
-                     '[4]  Dourado\n'
-                     '[5]  Verde-Limao\n'
-                     '[6]  Turquesa\n'
-                     '[7]  Azul\n'
-                     '[8]  Rosinha\n'
-                     '[9]  Rosa\n'
-                     '[10] Vermelho')
+plt.bar(k[0], k[1], color=['silver', 'salmon', 'bisque', 'gold', 'limegreen', 'turquoise', 'lightskyblue', 'plum', 'hotpink', 'crimson'])
 
-# Plotagem do Gráfico
-plt.bar(k[0], k[1], color=[cores[0], cores[1], cores[2], cores[3], cores[4], cores[5], cores[6], cores[7], cores[8], cores[9], cores[10]])
+plt.xlabel('Generos')
+plt.ylabel('Vendas')
+plt.title('Top 10 Generos Mais Vendidos')
 
 plt.tight_layout()
 plt.show()
