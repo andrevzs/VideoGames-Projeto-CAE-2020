@@ -6,9 +6,6 @@
 # Eduardo Scaburi Costa Barros
 # Pedro Eduardo Galvan Moreira
 # <https://github.com/andrezicka/VideoGames-Projeto-CAE-2020>
-import matplotlib.pyplot as plt
-import pandas as pd
-vg = pd.read_csv('VideoGames.csv', sep=",")
 
 
 def graf1(x, y):  # x = ano inicial do intervalo de tempo, y = ano final do intervalo de tempo
