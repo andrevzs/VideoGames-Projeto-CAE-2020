@@ -69,6 +69,8 @@ if op_valida:
     if op.upper() == 'N':
         ano1 = 1977
         ano2 = 2018
+        ano1_valido = True
+        ano2_valido = True
     if op.upper() == 'S':
         while not ano1_valido:
             ano1 = input('Digite o primeiro ano: ')
@@ -99,9 +101,28 @@ if op_valida:
 
 if ano2_valido:
     a = graf3(ano1, ano2)
+    # Usuario deve informar quais cores deseja no grafico
+    lst_cores = {'PRATA': 'silver', 'SALMAO': 'salmon', 'CREME': 'bisque', 'DOURADO': 'gold',
+                 'VERDE-LIMAO': 'limegreen',
+                 'TURQUESA': 'turquoise', 'AZUL': 'lightskyblue', 'ROSINHA': 'plum', 'ROSA': 'hotpink',
+                 'VERMELHO': 'crimson'}
+    cores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    escolhido = []
+    lista = ['Prata', 'Salmao', 'Creme', 'Dourado', 'Verde-Limao', 'Turquesa', 'Azul', 'Rosinha', 'Rosa', 'Vermelho']
+    for b in range(0, 10):
+        print(f'Digite um numero para selecionar uma cor para {a[0][b]}:\n')
+        for i in range(len(lista)):
+            print(f"        [{i}]   {lista[i]}")
+        print()
+        cores[b] = int(input("Escolha uma cor: "))
+        escolhido.append(lista[cores[b]].upper())
+        lista.remove(lista[cores[b]])
 
 
-plt.bar(a[0], a[1], color=['silver', 'salmon', 'bisque', 'gold', 'limegreen', 'turquoise', 'lightskyblue', 'plum', 'hotpink', 'crimson'])
+plt.bar(a[0], a[1], color=[lst_cores[escolhido[0]], lst_cores[escolhido[1]], lst_cores[escolhido[2]],
+                           lst_cores[escolhido[3]], lst_cores[escolhido[4]], lst_cores[escolhido[5]],
+                           lst_cores[escolhido[6]], lst_cores[escolhido[7]], lst_cores[escolhido[8]],
+                           lst_cores[escolhido[9]]])
 
 plt.xlabel('Generos')
 plt.ylabel('Vendas')
